@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
 	long dummy;
 	key_t key = ftok("/tmp/msg.temp", 1);
 	int msgid = msgget(key,0);
-	int res = msgrcv(msgid,&mg,(sizeof(mg)-sizeof(dummy)),0,(MSG_NOERROR));
+	int res = msgrcv(msgid,&mg,(sizeof(mg)-sizeof(dummy)),0,0);
 	if (res > 0){
 		std::ofstream log;
 		log.open("/home/box/message.txt", std::ios::out);

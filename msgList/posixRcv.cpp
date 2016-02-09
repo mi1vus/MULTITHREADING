@@ -25,7 +25,7 @@ char in [1000];
 int main(int argc, char** argv) {
 	const char* msg = "Hello!w";
 
-	mqd_t msqid = mq_open("/temp.mq",(O_RDONLY/*|O_EXCL*/));
+	mqd_t msqid = mq_open("/test.mq",(O_RDONLY/*|O_EXCL*/));
 
 	if (msqid != -1){
 		int res = mq_receive(msqid,in,1000,NULL);

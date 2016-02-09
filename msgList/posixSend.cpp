@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
 			printf ("mqid = %d\n", msqid);
 		int res = mq_send(msqid,msg,9,10);
 		if (res >= 0){
-			printf ("Отправлено сообщение %d = %s\n", sizeof(msg), msg);		
+			printf ("Отправлено сообщение %u = %s\n", sizeof(msg), msg);		
 		} else {
 			printf ("Ошибка отправки = %s\n", strerror(errno));	
 			return -1*res;

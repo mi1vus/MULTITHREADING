@@ -31,7 +31,8 @@ int main(int argc, char** argv) {
 
 		void * mem = mmap(NULL, MB, (PROT_READ | PROT_WRITE), MAP_SHARED, shmid, 0);
 		if (mem != MAP_FAILED){
-			memset(mem,13,MB);
+			void * r = memset(mem,13,MB);
+			printf ("Память 0 байт = %d\n", *((char*)mem));
 		} else {
 			printf ("Ошибка mmap = %s\n", strerror(errno));	
 			return 1;			

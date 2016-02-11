@@ -7,16 +7,17 @@
 #include <algorithm>
 #include <iterator>
 
-#include <fstream>
+#include <fstream> //files
 #include <errno.h> //errors
 
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/ipc.h>
+#include <stdio.h> //printf
+#include <unistd.h> // sys calls
+#include <sys/types.h> // O_ constants
+#include <sys/ipc.h>  // IPC_ constnts
+
 #include <sys/stat.h> // mode constant
 #include <fcntl.h> // O_* constants
-#include <semaphore.h>
+#include <semaphore.h> // POSIX semafores
 
 char in [1000];
 

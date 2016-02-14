@@ -23,24 +23,25 @@ char buf[MB];
 int main(int argc, char** argv) {
 	int in = mkfifo("in.fifo",(S_IRWXU|S_IRWXG|S_IRWXO));
 	int out = mkfifo("out.fifo",(S_IRWXU|S_IRWXG|S_IRWXO));
+	int fd_in = open("in.fifo", O_RDONLY);
+	int fd_out = open("out.fifo", O_WRONLY | O_NONBLOCK);
 
 	int fd,readed,writed;
-	while(1){
+	//while(1){
 		/* open, read, and display the message from the FIFO */
-		fd = open("in.fifo", O_RDONLY);
-		readed = read(fd, buf, MB);
+		readed = read(fd_in, buf, MB);
 		if (readed > 0){
 			buf[readed] = '\0';
 			printf("Received: %s\n", buf);
-			close(fd);
 
 			/* write "Hi" to the FIFO */
-			fd = open("out.fifo", O_WRONLY | O_NONBLOCK);
-			writed = write(fd, buf, readed);
+			writed = write(fd_out, buf, readed);
 			printf("Write over\n");
 		}
-		close(fd);
-	}
+
+	//}
+	close(fd_in);
+	close(fd_out);
 	/* remove the FIFO */
 	unlink("out.fifo");
 	unlink("in.fifo");

@@ -53,7 +53,7 @@ std::string printProizv(std::map<int,int>& dictionary)
 {
 	std::string* result = new std::string();
 	bool noOut = true;
-	///вывод явно инициализированной map на экран
+	///пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ map пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	for (auto it = dictionary.rbegin(); it != dictionary.rend(); ++it)
 	{
 		if(it->second == 0)

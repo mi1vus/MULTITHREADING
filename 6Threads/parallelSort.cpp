@@ -129,8 +129,8 @@ int main (int argc, char** argv)
 		mergeSort(mass,count);
 		
 		for(int i = 0; i < count;++i){
-			std::cout << mass[i] << std::endl;
+			std::cout << mass[i] << " ";
 		}
 	}
-	printf("count = %d \n",count);
+	//printf("count = %d \n",count);
 }
